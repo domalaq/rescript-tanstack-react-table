@@ -1,6 +1,6 @@
 # rescript-tanstack-react-table
 
-ReScript bindings for [tanstack-react-table](https://github.com/X/Y) (targeted version : `~X.X.X`)
+ReScript bindings for [@tanstack/react-table](https://tanstack.com/table/latest) (targeted version : `~8.12.0`)
 
 ## Setup
 
@@ -24,7 +24,8 @@ npm install @dck/rescript-tanstack-react-table
 
 ## Usage
 
-The functions can be accessed through `X` module.
+The functions can be accessed through `ReactTable` module.
+Check examples folder for usage.
 
 ## Development
 
