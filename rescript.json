@@ -1,5 +1,8 @@
 {
-  "name": "@dck/rescript-<module>",
+  "name": "@dck/rescript-tanstack-react-table",
+  "jsx": {
+    "version": 4
+  },
   "uncurried": true,
   "namespace": false,
   "sources": [
@@ -11,9 +14,19 @@
       "dir": "tests",
       "type": "dev",
       "subdirs": true
+    },
+    {
+      "dir": "example",
+      "type": "dev",
+      "subdirs": true
     }
   ],
   "suffix": ".mjs",
+  "warnings": {
+    "number": "-44-30-32",
+    "error": "+5+4+6+8"
+  },
+  "bs-dependencies": ["@rescript/react"],
   "bs-dev-dependencies": ["@rescript/core", "rescript-bun"],
   "package-specs": [
     {

@@ -1,24 +1,24 @@
-# rescript-<module>
+# rescript-tanstack-react-table
 
-ReScript bindings for [<module>](https://github.com/X/Y) (targeted version : `~X.X.X`)
+ReScript bindings for [tanstack-react-table](https://github.com/X/Y) (targeted version : `~X.X.X`)
 
 ## Setup
 
 1. Install the module
 
 ```bash
-bun install @dck/rescript-<module>
+bun install @dck/rescript-tanstack-react-table
 # or
-yarn install @dck/rescript-<module>
+yarn install @dck/rescript-tanstack-react-table
 # or
-npm install @dck/rescript-<module>
+npm install @dck/rescript-tanstack-react-table
 ```
 
 2. Add it to your `rescript.json` config
 
 ```json
 {
-  "bsc-dependencies": ["@dck/rescript-<module>"]
+  "bsc-dependencies": ["@dck/rescript-tanstack-react-table"]
 }
 ```
 
