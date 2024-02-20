@@ -27,7 +27,8 @@
   "scripts": {
     "build": "rescript build",
     "dev": "rescript build -w",
-    "clean": "rescript clean"
+    "clean": "rescript clean",
+    "examples": "cd examples && bun run start"
   },
   "files": [
     "src/*",

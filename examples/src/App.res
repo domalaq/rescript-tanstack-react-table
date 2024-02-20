@@ -6,10 +6,14 @@ let make = () => {
     <nav className="flex flex-row gap-4 items-center bg-white mb-4 shadow p-4">
       <a href="/" className="text-blue-500 underline"> {"Basic"->React.string} </a>
       <a href="/pagination" className="text-blue-500 underline"> {"Pagination"->React.string} </a>
+      <a href="/row-selection" className="text-blue-500 underline">
+        {"Row selection"->React.string}
+      </a>
     </nav>
     {switch url.path {
     | list{} => <Basic />
     | list{"pagination"} => <Pagination />
+    | list{"row-selection"} => <RowSelection />
     | _ => <p> {"Page not found"->React.string} </p>
     }}
   </React.Fragment>

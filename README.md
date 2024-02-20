@@ -27,6 +27,7 @@ npm install @dck/rescript-tanstack-react-table
 The functions can be accessed through `ReactTable` module.
 
 ### [Basic](https://github.com/DCKT/rescript-tanstack-react-table/blob/main/examples/src/Basic.res)
+
 ### [Pagination](https://github.com/DCKT/rescript-tanstack-react-table/blob/main/examples/src/Pagination.res)
 
 ## Development
@@ -43,8 +44,8 @@ Compiles files
 bun run dev
 ```
 
-Run tests
+Run examples
 
 ```bash
-bun test
+bun run examples
 ```

@@ -43,7 +43,7 @@ let make = () => {
     columns: [
       Column.make(
         ~id="age",
-        ~header=() => "Age"->React.string,
+        ~header=_ => "Age"->React.string,
         ~accessorFn=test => test.age,
         ~cell={
           cell => {

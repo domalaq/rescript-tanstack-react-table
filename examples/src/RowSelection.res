@@ -1,5 +1,15 @@
 open ReactTable
 
+module IndeterminateCheckbox = {
+  @module("./IndeterminateCheckbox.jsx") @react.component
+  external make: (
+    ~checked: bool=?,
+    ~disabled: bool=?,
+    ~indeterminate: bool=?,
+    ~onChange: ReactEvent.Form.t => unit=?,
+  ) => React.element = "default"
+}
+
 type person = {
   firstName: string,
   age: int,
@@ -20,9 +30,34 @@ let defaultData: array<person> = Array.fromInitializer(~length=500, i => {
 
 @react.component
 let make = () => {
+  let (rowSelection, setRowSelection) = React.useState(() => Js.Dict.empty())
+
   let table = useReactTable({
     data: defaultData,
+    enableRowSelection: true,
+    state: {
+      rowSelection: rowSelection,
+    },
+    onRowSelectionChange: setRowSelection,
     columns: [
+      Column.make(
+        ~id="select",
+        ~header=({table}) => {
+          <IndeterminateCheckbox
+            checked={table.getIsAllRowsSelected()}
+            indeterminate={table.getIsSomeRowsSelected()}
+            onChange={table.getToggleAllRowsSelectedHandler()}
+          />
+        },
+        ~cell=({row}) => {
+          <IndeterminateCheckbox
+            checked={row.getIsSelected()}
+            disabled={!row.getCanSelect()}
+            indeterminate={row.getIsSomeSelected()}
+            onChange={row.getToggleSelectedHandler()}
+          />
+        },
+      ),
       Column.make(
         ~id="age",
         ~header=_ => "Age"->React.string,
@@ -159,6 +194,14 @@ let make = () => {
     <div>
       {table.getRowModel().rows->Array.length->React.int}
       {"Rows"->React.string}
+    </div>
+    <div>
+      <label> {"Row Selection State:"->React.string} </label>
+      <pre>
+        {table.getState().rowSelection
+        ->JSON.stringifyAnyWithIndent(2)
+        ->Option.mapOr(React.null, React.string)}
+      </pre>
     </div>
   </div>
 }

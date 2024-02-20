@@ -14,11 +14,6 @@
       "dir": "tests",
       "type": "dev",
       "subdirs": true
-    },
-    {
-      "dir": "example",
-      "type": "dev",
-      "subdirs": true
     }
   ],
   "suffix": ".mjs",
