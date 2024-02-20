@@ -30,6 +30,8 @@ The functions can be accessed through `ReactTable` module.
 
 ### [Pagination](https://github.com/DCKT/rescript-tanstack-react-table/blob/main/examples/src/Pagination.res)
 
+### [Row Selection](https://github.com/DCKT/rescript-tanstack-react-table/blob/main/examples/src/RowSelection.res)
+
 ## Development
 
 Install deps
