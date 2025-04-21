@@ -65,11 +65,11 @@ module Column = {
 
 type groupContext
 
-type rec rowModel = {rows: array<row>}
-and row = {
+type rec rowModel<'tableData> = {rows: array<row<'tableData>>}
+and row<'tableData> = {
   getVisibleCells: unit => array<rowModelCell>,
   id: string,
-  original: unknown
+  original: 'tableData
 }
 and rowModelCell = {
   id: string,
@@ -94,7 +94,7 @@ and headerColumn = {columnDef: columnDef}
 
 type rec tableInstance<'tableData> = {
   getHeaderGroups: unit => array<headerGroup>,
-  getRowModel: unit => rowModel,
+  getRowModel: unit => rowModel<'tableData>,
   getFooterGroups: unit => array<headerGroup>,
   getPageCount: unit => int,
   getCanPreviousPage: unit => bool,
