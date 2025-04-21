@@ -15,7 +15,7 @@
   "peerDependencies": {
     "rescript": ">=11.0.0",
     "@rescript/react": "^0.13.1",
-    "@tanstack/react-table": "~8.12.0"
+    "@tanstack/react-table": "~8.21.3"
   },
   "devDependencies": {
     "@rescript/core": "^1.0.0",
