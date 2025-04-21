@@ -69,6 +69,7 @@ type rec rowModel = {rows: array<row>}
 and row = {
   getVisibleCells: unit => array<rowModelCell>,
   id: string,
+  original: unknown
 }
 and rowModelCell = {
   id: string,
